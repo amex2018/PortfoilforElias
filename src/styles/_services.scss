@@ -1,0 +1,54 @@
+.ServiceContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 30px;
+  row-gap: 30px;
+  margin-top: 2rem;
+
+  .ServiceContent {
+    display: flex;
+    width: 100%;
+    background-color: #191d2b;
+    border-left: 1px solid #2e344e;
+    border-right: 1px solid #2e344e;
+    border-bottom: 1px solid #2e344e;
+    border-top: 8px solid #2e344e;
+    transition: all 0.4s ease-in-out;
+    display: flex;
+    flex-direction: row;
+    @media screen and (max-width: 1400px) {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+    &:hover {
+      border-top: 8px solid #037fff;
+    }
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      position: relative;
+      padding-bottom: 1rem;
+      margin: 1rem 0;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 30%;
+        height: 1px;
+        background-color: #2e344e;
+      }
+    }
+    p {
+      margin-bottom: 30px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

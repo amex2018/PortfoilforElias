@@ -1,12 +1,16 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import avatar from '../img/Avatar.jpeg';
 import {NavLink} from 'react-router-dom';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 function Navbar() {
+     useEffect(() => {
+        AOS.init({duration: 2000})
+    }, [])
     return (
         <div className="NavBar">
             <nav className="nav">
-                <div className="profile">
+                <div className="profile" data-aos="zoom-in-up">
                     <img src={avatar} alt=""/>
                  </div>
 

@@ -1,12 +1,18 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 function MenuItems({menuItem}) {
+    useEffect(() => {
+        AOS.init({duration: 2000})
+    }, [])
     return (
         <div className="portfolis">
             {
                 menuItem.map((item)=>{
                     
-                      return  <div className="portfolio" key={item.id}>
+                      return  <div data-aos="fade-up" className="portfolio" key={item.id}>
                         <div className="image-data">
                             <img src={item.image} alt="Portfolis-images"/>
                             <ul className="hover-items">

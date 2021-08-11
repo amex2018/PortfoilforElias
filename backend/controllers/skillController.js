@@ -25,7 +25,7 @@ exports.GetSkill = async (req, res, next) =>{
     })
 }
 
-// update skill api  its id
+// update skill api  its by id
 exports.UpdateSkill = async (req, res, next) => {
 
     let skill = await Skill.findById(req.params.id);
@@ -50,4 +50,23 @@ exports.UpdateSkill = async (req, res, next) => {
         success: true,
         skill
     })
+}
+
+// delete skill its by id
+exports.DeleteSkill = async (req, res, next) =>{
+    let skill = await Skill.findById(req.params.id);
+    if(!skill){
+        return res.status(404).json({
+            success: true,
+            message: "Skill Not Found"
+        })
+    }
+   
+   skill = await Skill.findByIdAndDelete(req.params.id)
+
+   res.status(200).json({
+       success: true,
+
+       message: "Deleted Successfully..."
+   })
 }

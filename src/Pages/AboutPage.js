@@ -20,7 +20,7 @@ function AboutPage() {
             <Tittle title={'My Skills'} span={'My Skills'} />
             <div className="skillsContainer" data-aos="fade-up"
                       data-aos-anchor-placement="center-bottom">
-                <SkillsSection skill={'Javascript'} progress={'60%'} width={'60%'} />
+                <SkillsSection skill={'Javascript'} progress={'60%'} width={`60%`} />
                 <SkillsSection skill={'Typescript'} progress={'30%'} width={'30%'} />
                 <SkillsSection skill={'React Js'} progress={'70%'} width={'70%'} />
                 <SkillsSection skill={'Node Js'} progress={'80%'} width={'80%'} />

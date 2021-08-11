@@ -1,6 +1,6 @@
 const User = require('../model/user');
 const bcrypt = require('bcryptjs');
-
+const sendToken = require('../utils/Cookies');
 
 exports.RegisterUser =  async (req, res, next) =>{
     try {
@@ -14,6 +14,7 @@ exports.RegisterUser =  async (req, res, next) =>{
           password: encryptPassword
       });
 
+      sendToken(user, 200 , res)
 
     } catch (err) {
         console.log(err.message)
@@ -42,9 +43,19 @@ exports.LoginUser = async (req, res, next) =>{
         })
      }   
 
+     sendToken(user, 200, res)
+
 
 }
 
 exports.Logout = async (req, res, next) =>{
-
+     res.cookie('token', null, {
+         expires: new Date(Date.now()),
+         httpOnly: true
+     })
+   
+   res.status(200).json({
+       success: true,
+       message: "Logging Out"
+   })
 }

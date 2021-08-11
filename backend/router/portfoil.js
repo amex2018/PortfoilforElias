@@ -8,4 +8,5 @@ router.route('/admin/portfoil/new').post(IsVerify,IsAuthorizeRole("admin"),Creat
 router.route('/portfoil').get(GetPortfoil);
 router.route('/admin/portfoil/update/:id').put(IsVerify, IsAuthorizeRole('admin'),UpdatePortfoil);
 router.route('/admin/portfoil/delete/:id').delete(IsVerify, IsAuthorizeRole('admin'), DeletePortfoil);
+
 module.exports = router

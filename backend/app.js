@@ -12,10 +12,11 @@ app.use(express.json());
 // router api => /api/v1/
 const userRouter = require('./router/user');
 const skillRouter = require('./router/skill');
-const portfoil = require('./router/portfoil');
+const portfoilRouter = require('./router/portfoil');
+const ServiceRouter = require('./router/service');
 
 app.use('/api/v1/admin/',userRouter)
-app.use('/api/v1/', skillRouter, portfoil)
+app.use('/api/v1/', skillRouter, portfoilRouter, ServiceRouter)
 
 
 app.listen(process.env.PORT, () =>{

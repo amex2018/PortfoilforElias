@@ -10,16 +10,18 @@ const PortfoilSchema = mongoose.Schema({
         type: String,
         require: [true, "please select your category."],
     },
-    SocialMedia: {
+    SocialMedia:[
+         {
          socialLink: {
              type: String,
              required: true
          },
          socialIcon: {
              type: String,
-             required: true
+             required: true,
          }
-    },
+         }
+    ],
     Image: {
         public_id: {
             type: String,
@@ -37,7 +39,7 @@ const PortfoilSchema = mongoose.Schema({
     },
     CreatedAt: {
         type: Date,
-        default: Date.now()
+        default: Date.now
     }
     
 })

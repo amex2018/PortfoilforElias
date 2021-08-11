@@ -18,7 +18,7 @@ function PersonalInfo() {
                    loop: true,
                    delay: 50,
                    strings: [
-                       "I'm Elias T"
+                       "I'm Elias Tesfaye"
                    ]
                }}
               />

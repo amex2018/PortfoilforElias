@@ -6,6 +6,7 @@ import AboutPage from './Pages/AboutPage';
 import PortfliosPage from './Pages/PortfoliosPage';
 import BlogsPage from './Pages/BlogsPage';
 import ContactPage from './Pages/ContactPage';
+import  Signin  from "./Pages/signin";
 import { useState } from 'react';
 
 const  App = () =>{
@@ -42,6 +43,10 @@ const  App = () =>{
               </Route>
               <Route path="/contact" exact>
                 <ContactPage />
+              </Route>
+
+              <Route path="/admin/sign"> 
+                 Signin
               </Route>
             </Switch>
           </div>
